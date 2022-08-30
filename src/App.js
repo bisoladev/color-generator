@@ -3,7 +3,7 @@ import SingleColor from "./SingleColor";
 import Values from "values.js";
 
 function App() {
-  const [color, setColor] = useState("");
+  const [color, setColor] = useState("#f15025");
   const [error, setError] = useState(false);
   const [list, setList] = useState([]);
 
