@@ -2,11 +2,19 @@ import React, { useState, useEffect } from "react";
 
 const SingleColor = ({ color, index }) => {
   const [alert, setAlert] = useState(false);
-
   const { weight, rgb, hex } = color;
   const bcg = rgb.join(",");
-
   const hexValue = `#${hex}`;
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setAlert(false);
+    }, 500);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [alert]);
 
   return (
     <article
